@@ -1,0 +1,64 @@
+{
+  "manifest_version": 2,
+  "name": "wet",
+  "version": "0.1.0",
+  "icons": {
+    "16": "assets/icons/favicon-16.png",
+    "32": "assets/icons/favicon-32.png",
+    "64": "assets/icons/favicon-64.png",
+    "128": "assets/icons/favicon-128.png"
+  },
+
+  "description": "Web Extension Template",
+  "homepage_url": "https://github.com/roniemartinez/wet",
+  "short_name": "wet",
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "webNavigation",
+    "<all_urls>"
+  ],
+
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+
+  "__chrome|firefox__author": "roniemartinez",
+  "__opera__developer": {
+    "name": "roniemartinez"
+  },
+
+  "__firefox__applications": {
+    "gecko": {
+      "id": "{41A8FDC9-E86B-43D6-A626-53B321E21AA5}"
+    }
+  },
+
+  "__chrome__minimum_chrome_version": "49",
+  "__opera__minimum_opera_version": "36",
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/favicon-16.png",
+      "32": "assets/icons/favicon-32.png",
+      "64": "assets/icons/favicon-64.png",
+      "128": "assets/icons/favicon-128.png"
+    },
+    "default_title": "wet",
+    "__chrome|opera__chrome_style": false,
+    "__firefox__browser_style": false
+  },
+
+  "background": {
+    "scripts": ["js/background.bundle.js"],
+    "__chrome|opera__persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/contentScript.bundle.js"]
+    }
+  ]
+}

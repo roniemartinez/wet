@@ -1,0 +1,34 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-console": "off",
+    "no-extend-native": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "class-methods-use-this": "off",
+    "max-classes-per-file": "off",
+    "node/no-missing-import": "off",
+    "node/no-unpublished-import": "off"
+  },
+  "env": {
+    "webextensions": true,
+    "browser": true
+  },
+  "settings": {
+    "node": {
+      "tryExtensions": [".tsx"] // append tsx to the list as well
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
+}
